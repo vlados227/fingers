@@ -256,6 +256,23 @@ section > h3 {
   float: right;
 }
 
+#job {
+  text-align: center;
+}
+
+#job h3 {
+  margin-top: var(--semantic-margin);
+}
+
+#job img {
+  width: 70%;
+  margin-bottom: var(--semantic-margin);
+}
+
+#job ul {
+  font-size: 18px;
+}
+
 form {
   display: flex;
   flex-direction: column;
