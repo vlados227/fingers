@@ -17,14 +17,14 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="shortcut icon" href="../assets//logo.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="assets//logo.ico" type="image/x-icon" />
   <title>Пальчики оближешь</title>
 </head>
 
 <body>
   <header>
-    <a href="index.html"><img src="../assets//logo.svg" alt=""></a>
+    <a href="index.html"><img src="assets//logo.svg" alt=""></a>
     <form>
       <select class="form-select" aria-label="выберите ресторан">
         <option selected>выбрать ресторан</option>
@@ -62,7 +62,7 @@
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
       <div class="offcanvas-header">
-        <img src="../assets//logo.svg" alt="" />
+        <img src="assets//logo.svg" alt="" />
         <h5 class="offcanvas-title" id="offcanvasNavLabel">Пальчики оближешь</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
@@ -94,12 +94,24 @@
   </header>
 
   <main>
-    <section>
-      <h1>Вход в аккаунт</h1>
-      <form>
-        <input type="number" name="" id="" placeholder="номер телефона">
-        <input type="password" name="" id="" placeholder="пароль">
-        <input type="submit" value="подтвердить">
+
+    <section id="job">
+      <h1>Ищешь работу? У нас есть вариант</h1>
+        <img src="assets/Снимок экрана 2023-10-26 в 15.16.02.png" alt="">
+      <ul>
+        <li>дружный коллектив</li>
+        <li>гибкий график</li>
+        <li>оклад 180 рублей в час</li>
+      </ul>
+      <h3>Интересует?
+        Оставь свои контакты, вам позвонят
+      </h3>
+
+      <form action="" id="rabota">
+        <p>
+          <input type="tel" name="tel" id="tel" placeholder="телефон">
+        </p>
+        <input type="submit" value="я хочу работать">
       </form>
     </section>
   </main>
