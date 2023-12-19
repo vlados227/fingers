@@ -260,7 +260,6 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: var(--semantic-margin);
 }
 
 form * {
