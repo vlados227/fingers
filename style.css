@@ -1,7 +1,7 @@
 :root {
   --major: rgb(75, 70, 94);
   --accent: #a6808cff;
-  --accent2: #f89784;
+  --accent2: #f3b6aa;
   --extra: #dd8119;
   --bgcolour: #d6cfcbff;
   --extended-margin: 60px;
@@ -24,6 +24,10 @@ html {
 body {
   font-family: "Roboto Slab";
   background-color: var(--bgcolour);
+}
+
+section a {
+  color: var(--bs-body-color);
 }
 
 header {
@@ -141,6 +145,7 @@ section > h3 {
 
 .dishes-list {
   position: sticky;
+  margin-bottom: var(--semantic-margin);
   top: 100px;
   width: 100%;
   padding: var(--def-padd);
@@ -167,7 +172,7 @@ section > h3 {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-template-rows: none;
-  gap: var(--def-margin);
+  gap: var(--semantic-margin);
 }
 
 .dish-card {
@@ -201,7 +206,7 @@ section > h3 {
 
 .purchase {
   width: 50%;
-  padding: var(--def-padd);
+  padding: var(--little-margin);
   border-radius: 12px;
   color: var(--bgcolour);
   background-color: var(--extra);
@@ -229,10 +234,10 @@ section > h3 {
 
 .purchased {
   width: 50%;
-  padding: var(--def-padd);
+  padding: var(--little-margin);
   border-radius: 12px;
-  color: var(--bgcolour);
-  background-color: green;
+  color: black;
+  background-color: rgb(140, 226, 140);
   text-align: center;
   text-decoration: none;
 }
@@ -255,6 +260,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: var(--semantic-margin);
 }
 
 form * {
@@ -266,13 +272,9 @@ form * {
 }
 
 [type="submit"] {
+  background-color: var(--accent2);
   font-weight: bold;
   width: 25%;
-}
-
-
-#submit {
-  background-color: var(--accent2);
 }
 
 footer {
@@ -333,6 +335,7 @@ footer {
 
   .dishes {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .about .material-symbols-outlined {
@@ -347,7 +350,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 433px) {
+@media screen and (max-width: 444px) {
 
   section{
     padding: 0 15px 0 15px;

@@ -20,25 +20,6 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="shortcut icon" href="../assets//logo.ico" type="image/x-icon" />
   <title>Пальчики оближешь</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const purchaseElements = document.querySelectorAll('.purchase');
-
-      purchaseElements.forEach(function (purchaseElement) {
-        purchaseElement.addEventListener('click', function () {
-          const card = this.parentElement;
-          const clonedCard = card.cloneNode(true);
-
-          let savedCards = JSON.parse(localStorage.getItem('savedCards')) || [];
-          savedCards.push(clonedCard.outerHTML);
-          localStorage.setItem('savedCards', JSON.stringify(savedCards));
-          this.classList.remove('purchase');
-          this.classList.add('purchased');
-          localStorage.setItem(this.classList);
-        });
-      });
-    });
-  </script>
 </head>
 
 <body>
@@ -67,6 +48,9 @@
           <span class="material-symbols-outlined">account_circle</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="profile.html">
+          <span class="material-symbols-outlined">shopping_cart</span>
         </a>
       </li>
     </ul>
@@ -110,104 +94,13 @@
   </header>
 
   <main>
-    <section style="margin-bottom: 0;">
-      <h1>Каталог товаров</h1>
-    </section>
-    <nav id="menu" class="dishes-list">
-      <ul>
-        <li><a href="#dishes__cakes">торты</a></li>
-        <li><a href="#dishes__croissants">круассаны</a></li>
-        <li><a href="#dishes__hot_drinks">горячие напитки</a></li>
-        <li><a href="#dishes__cold_drinks">холодные напитки</a></li>
-      </ul>
-    </nav>
-    <section id="dishes">
-      <h4 id="dishes__cakes">Торты</h4>
-      <div class="dishes">
-        <div class="dish-card">
-          <h4>Наполеон</h4>
-          <img src="../assets/cake.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quod.</p>
-          <p class="price">900 ₽</p>
-          <a class="purchase"></a>
-        </div>
-        <div class="dish-card">
-          <h4>Прага</h4>
-          <img src="../assets/praha.jpg" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quod.</p>
-          <p class="price">700 ₽</p>
-          <a class="purchase"></a>
-        </div>
-        <div class="dish-card">
-          <h4>Чизкейк</h4>
-          <img src="../assets/unsplash_Nl8Oa6ZuNcA.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quod.</p>
-          <p class="price">649 ₽</p>
-          <a class="purchase"></a>
-        </div>
-        <div class="dish-card">
-          <h4>Шоколадный</h4>
-          <img src="../assets/choco.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quod.</p>
-          <p class="price">999 ₽</p>
-          <a class="purchase"></a>
-        </div>
-        <div class="dish-card">
-          <h4>Наполеон</h4>
-          <img src="../assets/cake.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quod.</p>
-          <p class="price">900 ₽</p>
-          <a class="purchase"></a>
-        </div>
-      </div>
-
-      <h4 id="dishes__croissants">Круассаны</h4>
-      <div class="dishes">
-        <div class="dish-card">
-          <h4>С шоколадом</h4>
-          <img src="../assets/crois1.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, iste.</p>
-          <p class="price">90 ₽</p>
-          <a class="purchase"></a>
-        </div>
-
-        <div class="dish-card">
-          <h4>С кремом</h4>
-          <img src="../assets/crois1.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, iste.</p>
-          <p class="price">89₽</p>
-          <a class="purchase"></a>
-        </div>
-      </div>
-
-      <h4 id="dishes__hot_drinks">Горячие напитки</h4>
-      <div class="dishes">
-        <div class="dish-card">
-          <h4>Амарикано</h4>
-          <img src="../assets/america.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, iste.</p>
-          <p class="price">90 ₽</p>
-          <a class="purchase"></a>
-        </div>
-
-        <div class="dish-card">
-          <h4>Ice coffee</h4>
-          <img src="../assets/cofffe2.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, iste.</p>
-          <p class="price">79 ₽</p>
-          <a class="purchase"></a>
-        </div>
-      </div>
-      <h4 id="dishes__cold_drinks">Холодные напитки</h4>
-      <div class="dishes">
-        <div class="dish-card">
-          <h4>Чай</h4>
-          <img src="../assets/tea.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, iste.</p>
-          <p class="price">60 ₽</p>
-          <a class="purchase"></a>
-        </div>
-      </div>
+    <section>
+      <h1>Вход в аккаунт</h1>
+      <form>
+        <input type="number" name="" id="" placeholder="номер телефона">
+        <input type="password" name="" id="" placeholder="пароль">
+        <input type="submit" value="подтвердить">
+      </form>
     </section>
   </main>
 
@@ -217,11 +110,11 @@
       const select = document.querySelector('select');
       const footer = document.querySelector('footer>p');
 
-      function updateFooterText() {
+      function updateFooterText(){
         let selectedRest = select.options[select.selectedIndex].text;
         if (selectedRest !== "выбрать ресторан") {
           footer.innerText = selectedRest + '   Самара 2023';
-        } else {
+        }else{
           footer.innerText = 'Самара 2023';
         }
         localStorage.setItem('selectedRest', selectedRest);
