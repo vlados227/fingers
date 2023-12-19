@@ -91,6 +91,10 @@ header li span {
   display: none;
 }
 
+.form-select {
+  margin-bottom: 0 !important;
+}
+
 header > select {
   background-color: var(--bgcolour) !important;
   font-weight: bold !important;
